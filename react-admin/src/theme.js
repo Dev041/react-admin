@@ -1,5 +1,6 @@
 import { createContext, useState, useMemo } from "react";
 import { createTheme } from '@mui/material/styles';
+// import { create } from "@mui/material/styles/createTransitions";
 
 //all the colors tokens
 export const tokens = (mode) => ({
@@ -16,7 +17,7 @@ export const tokens = (mode) => ({
             800: "#292929",
             900: "#141414"
         },
-        black: {
+        primary: {
             100: "#d0d1d5",
             200: "#a1a4ab",
             300: "#727681",
@@ -59,17 +60,6 @@ export const tokens = (mode) => ({
             700: "#3e4396",
             800: "#2a2d64",
             900: "#151632"
-        },
-        primary: {
-            100: "#daf1da",
-            200: "#b5e2b5",
-            300: "#91d491",
-            400: "#6cc56c",
-            500: "#47b747",
-            600: "#399239",
-            700: "#2b6e2b",
-            800: "#1c491c",
-            900: "#0e250e"
         }
     }
     :{
@@ -84,7 +74,7 @@ export const tokens = (mode) => ({
             800: "#c2c2c2",
             900: "#e0e0e0",
         },
-        black: {
+        primary: {
             100: "#040509",
             200: "#080b12",
             300: "#0c101b",
@@ -127,17 +117,6 @@ export const tokens = (mode) => ({
             700: "#a4a9fc",
             800: "#c3c6fd",
             900: "#e1e2fe",
-        },
-        primary: {
-            100: "#0e250e",
-            200: "#1c491c",
-            300: "#2b6e2b",
-            400: "#399239",
-            500: "#47b747",
-            600: "#6cc56c",
-            700: "#91d491",
-            800: "#b5e2b5",
-            900: "#daf1da",
         }
     }
 )
@@ -170,7 +149,7 @@ export const themeSettings = (mode) => {
                         main: colors.primary[100],
                     },
                     secondary: {
-                        main: colors.greenAccent[500],
+                        main: "#47b747",
                     },
                     neutral: {
                         dark: colors.grey[700],
@@ -178,7 +157,7 @@ export const themeSettings = (mode) => {
                         light: colors.grey[100]
                     },
                     background: {
-                        default: "#fcfcfc",
+                        default: "#ffffff",
                     }
                 }
             )
@@ -215,9 +194,23 @@ export const themeSettings = (mode) => {
 };
 
 // Context for color toggle mode
+export const ColorModeContext = createContext({
+    toggleColorMode: () => {}
+});
 
+export const useMode = () =>{
+    const [mode, setMode] = useState("dark");
 
-
+    const colorMode = useMemo(
+        () => ({
+            toggleColorMode : () =>
+            setMode((prev)=> (prev === "light" ? "dark" : "light")),
+        }),[]
+    );
+    const theme = useMemo(() => createTheme(themeSettings(mode)),[mode]);
+    
+    return [theme,colorMode]
+}
 
 
 
