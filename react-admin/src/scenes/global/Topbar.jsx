@@ -28,7 +28,7 @@ const Topbar = () => {
                 <IconButton type="button" sx={{p:1}}>
                     <SearchIcon/>
                 </IconButton>
-                <InputBase sx={{ml: 1, flex: 1 }} placeholder="Search"/>
+                <InputBase sx={{ml: 1 }} placeholder="Search"/>
             </Box>)}
             {/* Icons section */}
             <Box display="flex">
