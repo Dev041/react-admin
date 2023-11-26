@@ -118,7 +118,7 @@ const CardLineGraph = () => {
   return (
     <Card elevation={3} sx={{ m: 2, height: "100%" }}>
       <CardHeader
-        titleTypographyProps={{ variant: "h6" }}
+        titleTypographyProps={{ variant: "h6", fontWeight: "bold" }}
         title="Checking Account"
         action={
           <Box display="flex">

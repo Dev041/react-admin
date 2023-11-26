@@ -3,6 +3,7 @@ import { Box, Typography, Grid, CardHeader, useTheme, Card, Divider, Button, Men
 import { tokens } from "../../theme";
 import CardLineGraph from "./CardLineGraph";
 import CardBarGraph from "./CardBarGraph";
+import CardTable from "./CardTable";
 
 
 const Dashboard = () => {
@@ -45,12 +46,7 @@ const Dashboard = () => {
       </Grid>
 
       <Grid item xs={12} md={6}>
-        <Card elevation={3} sx={{ m: 2, height: "100%" }}>
-            <CardHeader title="Account watchlist"/>
-            <Divider/>
-            <Typography variant="h6">Card 4</Typography>
-          {/* Add content for Card 4 */}
-        </Card>
+        <CardTable/>
       </Grid>
     </Grid>
   </Box>
