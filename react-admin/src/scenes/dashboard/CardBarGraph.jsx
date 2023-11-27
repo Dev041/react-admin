@@ -72,17 +72,17 @@ const CardBarGraph = () => {
 
       const labels = ['older', 'Jan 01-08', 'Jan 09-16', 'Jan 17-24', 'Jan 25-31', 'Future'];
 
-svg
-  .selectAll('text')
-  .data(labels)
-  .enter()
-  .append('text')
-  .text((d) => d)
-  .attr('x', (d, i) => 35 + i * (40 + 30) + 5)  // Center the label below each bar
-  .attr('y', 145)                               // Adjust the y position as needed
-  .attr('text-anchor', 'middle')                 // Center the text
-  .style('fill', 'grey')
-  .style('font-size', '12px'); 
+    svg
+      .selectAll('text')
+      .data(labels)
+      .enter()
+      .append('text')
+      .text((d) => d)
+      .attr('x', (d, i) => 35 + i * (40 + 30) + 5) 
+      .attr('y', 145)                               
+      .attr('text-anchor', 'middle')                 
+      .style('fill', 'grey')
+      .style('font-size', '12px'); 
       
   }, []); 
   return (
@@ -116,7 +116,7 @@ svg
       <Dialog open={isUploadDialogOpen} onClose={handleDialogClose}>
         <DialogTitle>New Sales Invoice</DialogTitle>
         <DialogContent>
-          {/* Modern File Upload Component */}
+          {/* File Upload Component */}
           <div {...getRootProps()} 
           style={{ 
             cursor: 'pointer', 

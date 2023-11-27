@@ -16,9 +16,9 @@ const CardTable = () => {
         title="Account watchlist"
       />
       <Divider />
-      <TableContainer component={Paper} sx={{mb: 2}}>
+      <TableContainer component={Paper} sx={{ maxHeight: 185, mt: "5px", overflow: "auto" }}>
         <Table>
-          <TableHead>
+          <TableHead sx={{ position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 1 }} >
             <TableRow>
               <TableCell sx={{ color: 'grey' }}>Account</TableCell>
               <TableCell sx={{ color: 'grey' }}>This Month</TableCell>
@@ -27,8 +27,7 @@ const CardTable = () => {
           </TableHead>
           <TableBody>
             {tableData.map((row, index) => (
-              <TableRow key={index}>
-                {/* <TableCell>{row[0]}</TableCell> */}
+              <TableRow key={index} sx={{ height: 10 }}>
                 <TableCell>
                     <Typography fontWeight="bold">
                         {row[0]}

@@ -6,7 +6,7 @@ import { tokens } from "../../theme";
 
 const MonthDropdown = ({ onSelectMonth, selectedMonth }) => {
   const theme = useTheme ();
-  // const colors = tokens(theme.palette.mode);
+  const colors = tokens(theme.palette.mode);
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -59,7 +59,7 @@ const CardLineGraph = () => {
   const svgRef = useRef();
 
   useLayoutEffect(() => {
-    // D3.js code for creating a line graph
+    
     const xData = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
     const margin = { top: 20, right: 10, bottom: 30, left: 20 };
@@ -100,16 +100,14 @@ const CardLineGraph = () => {
       .attr("dx", "-1em")
       .style("text-anchor", "end")
       .attr("transform", "rotate(-45)");
-  }, [yData, isLoading]); // Re-run when yData changes
+  }, [yData, isLoading]); 
 
   const handleManageClick = () => {
     setIsLoading(true);
 
-    // Generate new random y-axis data in the positive direction
     const newRandomData = yData.map((value) => value + Math.floor(Math.random() * 20));
     setYData(newRandomData);
 
-    // Simulate a delay (you can remove this in a real-world scenario)
     setTimeout(() => {
       // Set loading back to false
       setIsLoading(false);
@@ -140,7 +138,7 @@ const CardLineGraph = () => {
       />
       <Divider />
       {isLoading ? (
-        // Show a loader when the graph is loading
+        // Show loader when the graph is loading
         <Box display="flex" justifyContent="center" alignItems="center" height={200}>
           <CircularProgress />
         </Box>

@@ -7,6 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
+import AvatarImage  from "../../assets/images/profile-pic.jpeg"
 // import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -46,7 +47,7 @@ const Topbar = () => {
                 </Box>
                 </IconButton>
                 <IconButton>
-                    <Avatar sx={{ width: 25, height: 25 }} src="https://mui.com/static/images/avatar/1.jpg" />
+                    <Avatar sx={{ width: 25, height: 25 }} src={AvatarImage} />
                 </IconButton>
             </Box>
         </Box>
